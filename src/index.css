@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-telegram-bg text-telegram-text font-roboto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.neon-text {
+  @apply font-orbitron font-bold text-primary animate-glow;
+}
+
+.neon-text-orange {
+  @apply font-orbitron font-bold text-secondary-light;
+  text-shadow: 0 0 10px #FF8C00, 0 0 20px #FF8C00;
+}
+
+.neon-text-green {
+  @apply font-orbitron font-bold text-accent-light;
+  text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
+}
+
+.telegram-message {
+  @apply bg-telegram-message rounded-lg p-4 mb-4 max-w-[85%];
+}
+
+.telegram-message.sent {
+  @apply bg-telegram-active ml-auto;
+}
+
+.telegram-input {
+  @apply bg-telegram-message border-none text-white p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.btn {
+  @apply font-orbitron font-medium py-3 px-6 rounded-md transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary text-black hover:bg-primary-light hover:shadow-neon;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-black hover:bg-secondary-light hover:shadow-neon-orange;
+}
+
+.btn-accent {
+  @apply bg-accent text-black hover:bg-accent-light hover:shadow-neon-green;
+}
+
+.game-cell {
+  @apply flex items-center justify-center text-4xl font-bold cursor-pointer transition-all duration-300;
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 640px) {
+  .game-cell {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.game-board {
+  @apply grid grid-cols-3 gap-2 bg-telegram-bg p-2 rounded-lg;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .game-board {
+    max-width: 260px;
+  }
+}
+
+.player-x {
+  @apply text-primary;
+}
+
+.player-o {
+  @apply text-secondary;
+}
+
+.winner-cell {
+  @apply animate-pulse;
+}
